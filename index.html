@@ -2,81 +2,84 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Indus Botanical | Premium Organic Export</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 :root { --primary: #2d5a27; --gold: #c5a059; --text: #333; --light: #f9fbf9; }
-body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: #fff; scroll-behavior: smooth; color: var(--text); }
+
+/* Desktop Feel Force */
+html, body {
+margin: 0;
+padding: 0;
+width: 100%;
+background: #fff;
+color: var(--text);
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+scroll-behavior: smooth;
+}
+
+body { min-width: 1200px; }
 
 /* Navigation */
-.top-nav { background: white; padding: 10px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--primary); position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.top-nav { background: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--primary); position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
 .logo img { height: 70px; width: 70px; border-radius: 50%; border: 2px solid var(--gold); object-fit: cover; }
-.nav-links { display: flex; align-items: center; gap: 20px; }
-.nav-links a { text-decoration: none; color: #444; font-weight: bold; transition: 0.3s; }
+.nav-links { display: flex; align-items: center; gap: 25px; }
+.nav-links a { text-decoration: none; color: #444; font-weight: bold; transition: 0.3s; font-size: 1.1rem; }
 .nav-links a:hover { color: var(--primary); }
 
-/* Hero */
+/* Hero Section */
 .hero {
 width: 100%;
 height: 60vh;
-background: url('https://i.ibb.co/QjXMDrYB/1776880590315.png');
+background: url('https://i.ibb.co/67YrQPS9/1776880590315-ezremove.png') no-repeat center;
 background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
 display: flex;
-flex-direction: column;
 align-items: center;
 justify-content: center;
-color: white;
-text-align: center;
 }
 
-.container { padding: 40px 5%; }
-.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-.card { background: white; border-radius: 20px; padding: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; border: 1px solid #eee; position: relative; }
-.card img { width: 100%; height: 220px; object-fit: cover; border-radius: 15px; margin-bottom: 15px; }
+.container { padding: 50px 5%; max-width: 1300px; margin: 0 auto; }
+.product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+
+.card { background: white; border-radius: 20px; padding: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; border: 1px solid #eee; transition: 0.3s; }
+.card img { width: 100%; height: 250px; object-fit: cover; border-radius: 15px; margin-bottom: 20px; }
 
 .calc-box { background: #f4f8f4; padding: 15px; border-radius: 12px; margin: 15px 0; border: 1px solid #e0ebe0; }
-.calc-box input { width: 80px; padding: 8px; border-radius: 8px; border: 1px solid #ccc; text-align: center; }
-.total-price { font-size: 1.6rem; font-weight: 900; color: var(--primary); }
+.calc-box input { width: 80px; padding: 10px; border-radius: 8px; border: 1px solid #ccc; text-align: center; font-size: 1rem; }
+.total-price { font-size: 1.8rem; font-weight: 900; color: var(--primary); margin-top: 10px; }
 
-.buy-btn { display: block; background: var(--primary); color: white; padding: 15px; border-radius: 10px; text-decoration: none; font-weight: bold; width: 100%; cursor: pointer; border: none; font-size: 1rem; }
+.buy-btn { display: block; background: var(--primary); color: white; padding: 15px; border-radius: 10px; text-decoration: none; font-weight: bold; width: 100%; cursor: pointer; border: none; font-size: 1.1rem; }
 
 /* Form */
-.form-section { background: var(--light); padding: 60px 5%; }
-.form-container { max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
-.input-group { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
-input, textarea, select { width: 100%; padding: 15px; border: 2px solid #eee; border-radius: 10px; box-sizing: border-box; font-family: inherit; }
+.form-section { background: var(--light); padding: 80px 5%; }
+.form-container { max-width: 850px; margin: 0 auto; background: white; padding: 45px; border-radius: 25px; box-shadow: 0 15px 45px rgba(0,0,0,0.1); }
+.input-group { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+input, textarea { width: 100%; padding: 15px; border: 2px solid #eee; border-radius: 12px; font-size: 1rem; outline: none; }
 
-/* Mobile Flexibility (Media Queries) */
-@media (max-width: 768px) {
-.hero { height: 40vh; }
-.top-nav { flex-direction: column; gap: 15px; padding: 15px 5%; }
-.nav-links { flex-wrap: wrap; justify-content: center; }
-.form-section { padding: 30px 5%; }
-.form-container { padding: 20px; }
-/* Make form inputs stack on mobile instead of being side-by-side */
-.input-group { grid-template-columns: 1fr; gap: 10px; }
-}
-
-/* AI Window */
-#ai-window { display:none; position:fixed; right:25px; bottom:100px; width:340px; max-width: 90%; background:white; border-radius:20px; box-shadow:0 20px 50px rgba(0,0,0,0.3); z-index:2000; overflow:hidden; border: 1px solid var(--primary); }
-.ai-header { background: var(--primary); color: white; padding: 15px; font-weight: bold; display: flex; justify-content: space-between; }
-.ai-chat-body { height: 240px; overflow-y: auto; padding: 15px; font-size: 0.9rem; }
-.ai-input-area { display: flex; padding: 10px; border-top: 1px solid #eee; }
-.ai-input-area input { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 5px 0 0 5px; }
-.ai-send-btn { background: var(--primary); color: white; border: none; padding: 0 15px; border-radius: 0 5px 5px 0; cursor: pointer; }
-.ai-quick-btn { font-size: 0.8rem; padding: 6px 10px; background: white; border: 1px solid var(--primary); color: var(--primary); border-radius: 15px; cursor: pointer; margin-right: 5px; margin-bottom: 5px; display: inline-block; transition: 0.2s; }
-.ai-quick-btn:hover { background: var(--primary); color: white; }
-
-footer { background: #111; color: white; padding: 40px 5%; text-align: center; }
-.footer-links a { color: var(--gold); text-decoration: none; margin: 0 10px; font-size: 0.85rem; }
-
-.sticky-controls { position: fixed; right: 25px; bottom: 25px; display: flex; flex-direction: column; gap: 15px; z-index: 1000; }
-.icon-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white !important; font-size: 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); text-decoration: none; }
+/* Floating Controls */
+.sticky-controls { position: fixed; right: 30px; bottom: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 1001; }
+.icon-btn { width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white !important; font-size: 32px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); text-decoration: none; cursor: pointer; }
 .insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
 .whatsapp { background: #25D366; }
+.ai-bot { background: #111; }
+
+/* AI Chat Window */
+#ai-window { display:none; position:fixed; right:30px; bottom:110px; width:350px; background:white; border-radius:20px; box-shadow:0 25px 60px rgba(0,0,0,0.3); z-index:2000; overflow:hidden; border: 1px solid var(--primary); }
+.ai-header { background: var(--primary); color: white; padding: 15px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+.ai-chat-body { height: 320px; overflow-y: auto; padding: 15px; background: #fff; font-size: 0.9rem; border-bottom: 1px solid #eee; }
+.ai-question-btn { display: block; width: 100%; padding: 10px; margin-bottom: 8px; background: #f0f7f0; border: 1px solid var(--primary); border-radius: 10px; text-align: left; cursor: pointer; font-size: 0.85rem; color: var(--primary); transition: 0.3s; }
+.ai-question-btn:hover { background: var(--primary); color: white; }
+.ai-input-area { display: flex; padding: 10px; background: #fff; }
+.ai-input-area input { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 8px 0 0 8px; outline: none; }
+.ai-send-btn { background: var(--primary); color: white; border: none; padding: 0 15px; border-radius: 0 8px 8px 0; cursor: pointer; }
+
+/* Message Bubbles */
+.msg { margin-bottom: 10px; padding: 10px; border-radius: 10px; max-width: 85%; line-height: 1.4; }
+.bot-msg { background: #e0ebe0; border-left: 4px solid var(--primary); align-self: flex-start; }
+.user-msg { background: #f0f0f0; margin-left: auto; text-align: right; }
+
+footer { background: #111; color: white; padding: 50px 5%; text-align: center; border-top: 5px solid var(--gold); }
+.insta-link { color: var(--gold); text-decoration: none; font-weight: bold; font-size: 1.1rem; display: inline-block; margin-top: 15px; }
 </style>
 </head>
 <body>
@@ -90,37 +93,39 @@ footer { background: #111; color: white; padding: 40px 5%; text-align: center; }
 </div>
 </nav>
 
-<header class="hero">
-</header>
+<header class="hero"></header>
 
 <section class="container" id="products">
 <div class="product-grid">
 <div class="card">
-<img src="https://i.ibb.co/nqNCh9p1/1448.jpg" alt="Neem Powder">
-<h3>Neem Powder</h3>
+<img src="https://i.ibb.co/zWsmjM0w/1776792731628.png" alt="Neem Powder">
+<h3>Premium Neem Powder</h3>
 <div class="calc-box">
-<label>Qty (KG):</label> <input type="number" id="qty-powder" value="1" min="1" oninput="calculate()">
+<label>Qty (KG):</label>
+<input type="number" id="qty-powder" value="1" min="1" oninput="calculate()">
 <div class="total-price">$<span id="total-powder">19.99</span></div>
 </div>
-<button class="buy-btn" onclick="location.href='#order'">Order Powder</button>
+<button class="buy-btn" onclick="location.href='#order'">Order Now</button>
 </div>
 
 <div class="card">
-<img src="https://i.ibb.co/DDLv6p9F/1378.jpg" alt="Neem Leaves">
+<img src="https://i.ibb.co/nN7cn04w/1776795309407.png" alt="Neem Leaves">
 <h3>Dry Neem Leaves</h3>
 <div class="calc-box">
-<label>Qty (KG):</label> <input type="number" id="qty-leaves" value="1" min="1" oninput="calculate()">
+<label>Qty (KG):</label>
+<input type="number" id="qty-leaves" value="1" min="1" oninput="calculate()">
 <div class="total-price">$<span id="total-leaves">14.50</span></div>
 </div>
-<button class="buy-btn" onclick="location.href='#order'">Order Leaves</button>
+<button class="buy-btn" onclick="location.href='#order'">Order Now</button>
 </div>
 
-<div class="card" style="border: 2px solid var(--gold);">
-<div style="background:var(--gold); color:white; padding:5px; font-size:0.8rem; font-weight:bold;">BULK SAVINGS</div>
-<img src="https://i.ibb.co/zhnz6P1K/1776840053006.png7" alt="Bulk Neem">
-<h3>Bulk Neem (100KG+)</h3>
+<div class="card" style="border: 2.5px solid var(--gold);">
+<div style="background:var(--gold); color:white; padding:5px; font-size:0.8rem; font-weight:bold;">BULK EXPORT</div>
+<img src="https://i.ibb.co/zhnz6P1K/1776840053006.png" alt="Bulk Neem">
+<h3>Bulk (100KG+)</h3>
 <div class="calc-box">
-<label>Qty (KG):</label> <input type="number" id="qty-bulk" value="100" min="100" oninput="calculate()">
+<label>Qty (KG):</label>
+<input type="number" id="qty-bulk" value="100" min="100" oninput="calculate()">
 <div class="total-price">$<span id="total-bulk">1200.00</span></div>
 </div>
 <button class="buy-btn" style="background:var(--gold); color:black;" onclick="location.href='#order'">Get Bulk Quote</button>
@@ -130,8 +135,7 @@ footer { background: #111; color: white; padding: 40px 5%; text-align: center; }
 
 <section class="form-section" id="order">
 <div class="form-container">
-<h2 style="text-align: center; color: var(--primary);">Secure Export Request</h2>
-<p style="text-align: center; font-size: 0.9rem; color: #666; margin-bottom: 20px;">Submit your details below. You will receive a secure Payoneer payment link via email to complete your order.</p>
+<h2 style="text-align: center; color: var(--primary); margin-bottom: 10px;">Secure Export Request</h2>
 <form action="https://formspree.io/f/xeevpopj" method="POST">
 <div class="input-group">
 <input type="text" name="First Name" placeholder="First Name *" required>
@@ -141,56 +145,48 @@ footer { background: #111; color: white; padding: 40px 5%; text-align: center; }
 <input type="email" name="Email" placeholder="Email Address *" required>
 <input type="tel" name="Phone" placeholder="Phone Number *" required>
 </div>
-
 <div class="input-group">
-<input type="text" name="Country" placeholder="Country *" required>
-<input type="text" name="City/State" placeholder="City / State *" required>
+<input type="text" name="Country" placeholder="Target Country *" required>
+<input type="text" name="City" placeholder="City / State *" required>
 </div>
-
-<textarea name="Address" placeholder="Full Shipping Address *" rows="2" required style="margin-bottom: 15px;"></textarea>
-<textarea name="Details" placeholder="Quantity & Product Details (e.g., 50kg Powder, 100kg Leaves)... *" rows="3" required></textarea>
-
-<div style="text-align:center; margin: 20px 0;">
-<p style="font-size: 0.9rem;"><b>Payment Method:</b> Secure Invoice via Payoneer</p>
-<i class="fab fa-cc-visa fa-2x" style="margin:0 10px; color:#1a1f71;"></i>
-<i class="fab fa-cc-mastercard fa-2x" style="margin:0 10px; color:#eb001b;"></i>
-</div>
-<button type="submit" class="buy-btn">SUBMIT REQUEST</button>
+<textarea name="Address" placeholder="Full Delivery Address *" rows="2" required style="margin-bottom: 20px;"></textarea>
+<textarea name="Order Details" placeholder="Order Details..." rows="3" required></textarea>
+<button type="submit" class="buy-btn" style="margin-top: 20px; height: 60px;">SUBMIT ORDER REQUEST</button>
 </form>
 </div>
 </section>
 
 <div class="sticky-controls">
-<a href="https://instagram.com/Indus_botanical.global/" class="icon-btn insta" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-<a href="https://wa.me/923299718034" class="icon-btn whatsapp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
-<div class="icon-btn" style="background:#111; cursor:pointer;" onclick="toggleAI()"><i class="fas fa-robot"></i></div>
+<a href="https://instagram.com/Indus_botanical.global/" class="icon-btn insta" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://wa.me/923299718034" class="icon-btn whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<div class="icon-btn ai-bot" onclick="toggleAI()"><i class="fas fa-robot"></i></div>
 </div>
 
 <div id="ai-window">
-<div class="ai-header"><span>Indus Assistant</span><span onclick="toggleAI()" style="cursor:pointer;">&times;</span></div>
-<div id="ai-body" class="ai-chat-body">
-<div style="background:#e0ebe0; padding:10px; border-radius:10px; margin-bottom:10px;">Hi! I am Indus Assistant. How can I help you today?</div>
-<div id="ai-quick-options" style="margin-bottom: 15px;">
-<button class="ai-quick-btn" onclick="sendAutoMessage('Do you ship globally?')">Shipping?</button>
-<button class="ai-quick-btn" onclick="sendAutoMessage('What is your minimum order?')">Min Order?</button>
-<button class="ai-quick-btn" onclick="sendAutoMessage('agent')">Talk to Agent</button>
+<div class="ai-header">
+<span>Indus Assistant</span>
+<span onclick="toggleAI()" style="cursor:pointer; font-size: 24px;">&times;</span>
 </div>
+<div id="ai-body" class="ai-chat-body">
+<div class="msg bot-msg"><b>Indus:</b> Hello! Click a question below or type your message.</div>
+<button class="ai-question-btn" onclick="aiReply('sample')">1. Can I get the sample?</button>
+<button class="ai-question-btn" onclick="aiReply('time')">2. What is the best time to call you?</button>
+<button class="ai-question-btn" onclick="aiReply('delivery')">3. What is standard delivery time for bulk?</button>
+<button class="ai-question-btn" onclick="aiReply('choose')">4. Why should I choose you?</button>
 </div>
 <div class="ai-input-area">
-<input type="text" id="ai-input" placeholder="Type message..." onkeypress="if(event.key==='Enter') sendMessage()">
-<button class="ai-send-btn" onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+<input type="text" id="user-input" placeholder="Type your message..." onkeypress="if(event.key==='Enter') manualChat()">
+<button class="ai-send-btn" onclick="manualChat()"><i class="fas fa-paper-plane"></i></button>
 </div>
 </div>
 
 <footer>
 <h3>INDUS BOTANICAL</h3>
-<p>Email: indusbotanical.global@gmail.com | Phone: +92 329 9718034</p>
-<p style="margin-bottom: 20px;"><a href="https://instagram.com/Indus_botanical.global/" target="_blank" rel="noopener noreferrer" style="color:var(--gold); text-decoration:none; font-weight:bold;"><i class="fab fa-instagram"></i> Follow us on Instagram</a></p>
-
-<div class="footer-links">
-<a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a> | <a href="#">Shipping Policy</a>
+<p>Email: indusbotanical.global@gmail.com | WhatsApp: +92 329 9718034</p>
+<a href="https://instagram.com/Indus_botanical.global/" target="_blank" class="insta-link"><i class="fab fa-instagram"></i> Follow us on Instagram</a>
+<div style="margin-top: 20px; font-size: 0.8rem; color: #888;">
+© 2026 Indus Botanical. All Rights Reserved.
 </div>
-<p style="font-size: 0.7rem; color: #666; margin-top: 20px;">© 2026 Indus Botanical. All Rights Reserved.</p>
 </footer>
 
 <script>
@@ -199,33 +195,38 @@ document.getElementById('total-powder').innerText = (document.getElementById('qt
 document.getElementById('total-leaves').innerText = (document.getElementById('qty-leaves').value * 14.50).toFixed(2);
 document.getElementById('total-bulk').innerText = (document.getElementById('qty-bulk').value * 12.00).toFixed(2);
 }
+
 function toggleAI() {
 let win = document.getElementById('ai-window');
-win.style.display = (win.style.display === 'none') ? 'block' : 'none';
+win.style.display = (win.style.display === 'none' || win.style.display === '') ? 'block' : 'none';
 }
-function sendAutoMessage(text) {
-document.getElementById('ai-input').value = text;
-sendMessage();
-}
-function sendMessage() {
-let input = document.getElementById('ai-input');
-let body = document.getElementById('ai-body');
-if(!input.value) return;
-let userMsg = input.value;
-body.innerHTML += `<div style="text-align:right; margin-bottom:10px;"><span style="background:#eee; padding:8px 12px; border-radius:10px; display:inline-block;">${userMsg}</span></div>`;
 
-if(userMsg.toLowerCase().includes("agent")) {
-body.innerHTML += `<div style="background:#e0ebe0; padding:10px; border-radius:10px; margin-bottom:10px;">Connecting to human... <a href="https://wa.me/923299718034" target="_blank" style="color:var(--primary); font-weight:bold;">Chat on WhatsApp</a></div>`;
-} else if (userMsg.toLowerCase().includes("ship")) {
-body.innerHTML += `<div style="background:#e0ebe0; padding:10px; border-radius:10px; margin-bottom:10px;">Yes! We ship globally including the USA, UK, EU, and UAE.</div>`;
-} else if (userMsg.toLowerCase().includes("min") || userMsg.toLowerCase().includes("order")) {
-body.innerHTML += `<div style="background:#e0ebe0; padding:10px; border-radius:10px; margin-bottom:10px;">Our minimum order for bulk pricing is 100KG. For smaller quantities, please order directly from our product section.</div>`;
-} else {
-body.innerHTML += `<div style="background:#e0ebe0; padding:10px; border-radius:10px; margin-bottom:10px;">Please type "agent" to connect with our sales team on WhatsApp for this query.</div>`;
+function aiReply(type) {
+const body = document.getElementById('ai-body');
+let question = "";
+let answer = "";
+
+if(type === 'sample') { question = "Can I get the sample?"; answer = "Yes, we provide samples (100g-250g). Shipping charges apply. Please submit a request via our form."; }
+else if(type === 'time') { question = "What is the best time to call you?"; answer = "You can call us between 9:00 AM to 6:00 PM (PKT) or message us on WhatsApp anytime."; }
+else if(type === 'delivery') { question = "What is standard delivery time for bulk?"; answer = "Standard delivery for bulk (100KG+) is 10-15 working days via air/sea export."; }
+else if(type === 'choose') { question = "Why should I choose you?"; answer = "We offer 100% organic, lab-tested Neem directly from the source with competitive bulk pricing."; }
+
+body.innerHTML += `<div class="msg user-msg">${question}</div>`;
+body.innerHTML += `<div class="msg bot-msg"><b>Indus:</b> ${answer}</div>`;
+body.scrollTop = body.scrollHeight;
 }
+
+function manualChat() {
+const input = document.getElementById('user-input');
+const body = document.getElementById('ai-body');
+if(!input.value.trim()) return;
+
+body.innerHTML += `<div class="msg user-msg">${input.value}</div>`;
+body.innerHTML += `<div class="msg bot-msg"><b>Indus:</b> Thank you for your message! Please type "agent" to connect with us on WhatsApp for a quick response.</div>`;
 input.value = "";
 body.scrollTop = body.scrollHeight;
 }
 </script>
+
 </body>
 </html>
